@@ -1,0 +1,13 @@
+
+body {
+    /* Background color (Anything except white) - 3 Marks */
+    background-color: #f0e68c; 
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional: Ensures padding doesn't break your container width */
+* {
+    box-sizing: border-box;
+}
