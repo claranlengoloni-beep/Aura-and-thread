@@ -1,13 +1,71 @@
+/* Enhanced Aura & Thread Stylesheet */
 
 body {
-    /* Background color (Anything except white) - 3 Marks */
-    background-color: #f0e68c; 
+    background-color: #fcfaf7;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c2c2c;
+    line-height: 1.6;
 }
 
-/* Optional: Ensures padding doesn't break your container width */
 * {
     box-sizing: border-box;
+}
+
+/* ============ SMOOTH TRANSITIONS ============ */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============ SELECTION STYLING ============ */
+::selection {
+    background-color: #c5a47e;
+    color: #fcfaf7;
+}
+
+/* ============ SCROLLBAR STYLING ============ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c5a47e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a88a6d;
+}
+
+/* ============ UTILITY CLASSES ============ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+/* ============ ACCESSIBILITY ============ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
