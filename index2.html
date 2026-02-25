@@ -3,112 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura & Thread Collective | Heritage</title>
-    
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        .main-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center; /* Centering content (3 Marks) */
-            flex: 1;
-        }
-
-        .gallery-grid {
-            display: grid;
-            /* Responsive grid logic */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        /* Styling for the 5 containers (5 Marks) */
-        .image-card {
-            background-color: #ffffff;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-            border: 1px solid #eee;
-        }
-
-        .image-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .image-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .card-text {
-            padding: 20px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            color: #444;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-    </style>
+    <title>Aura and Thread</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-
-    <div class="main-container">
-        
-        <h1 style="font-size: 3rem; color: #2c2c2c; margin-bottom: 5px; font-weight: 300; letter-spacing: 5px;">Aura & Thread</h1>
-        <p style="color: #c5a47e; text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 20px;">Heritage Collective</p>
-        
-        <hr style="width: 60px; border: 0; border-top: 2px solid #c5a47e; margin: 0 auto 40px auto;">
-
-        <p style="font-style: italic; color: #777; max-width: 600px; margin: 0 auto; line-height: 1.6;">
-            Rooted in the hunt for vintage quality and the endurance of natural fibers. 
-            We've evolved from "Thrift Thrills" into a modern standard for professional wear.
-        </p>
-
-        <div class="gallery-grid">
-            
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=500" alt="Fabric Detail">
-                <div class="card-text">Superior Stitching</div>
+    <header>
+        <h1>Aura and Thread</h1>
+        <nav id="mobile-nav">
+            <button id="menu-toggle">Menu</button>
+            <ul id="nav-list" class="hidden">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="product-showcase">
+            <h2>Our Products</h2>
+            <div class="product-item" onclick="openLightbox('image1.jpg')">
+                <img src="image1-thumb.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>Description of Product 1.</p>
             </div>
-
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=500" alt="Linen Garment">
-                <div class="card-text">Heritage Linen</div>
+            <div class="product-item" onclick="openLightbox('image2.jpg')">
+                <img src="image2-thumb.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>Description of Product 2.</p>
             </div>
-
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1594932224010-75670779d717?auto=format&fit=crop&w=500" alt="Wool Texture">
-                <div class="card-text">Structured Wool</div>
+            <!-- More products can be added here -->
+        </section>
+        <section id="newsletter">
+            <h2>Sign Up for Our Newsletter</h2>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+        <section id="testimonials">
+            <h2>Customer Testimonials</h2>
+            <div class="testimonial">
+                <p>"The best products ever! Highly recommend!" - Customer A</p>
             </div>
-
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500" alt="Boutique Studio">
-                <div class="card-text">Our Design Studio</div>
+            <div class="testimonial">
+                <p>"Amazing quality and great service!" - Customer B</p>
             </div>
-
-            <div class="image-card">
-                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=500" alt="Thread Spools">
-                <div class="card-text">Natural Fibers</div>
-            </div>
-
+            <!-- More testimonials can be added here -->
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Information about the company and its mission.</p>
+        </section>
+        <section id="blog">
+            <h2>Latest Blog Posts</h2>
+            <article>
+                <h3>Blog Post Title 1</h3>
+                <p>Summary of blog post 1.</p>
+            </article>
+            <!-- More blog posts can be added here -->
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+        <div id="lightbox" class="hidden">
+            <span class="close" onclick="closeLightbox()">&times;</span>
+            <img class="lightbox-img" src="" alt="Product Image">
         </div>
-    </div>
-
-    <footer style="background-color: #2c2c2c; color: #fcfaf7; padding: 50px 20px; text-align: center;">
-        <h3 style="letter-spacing: 2px; text-transform: uppercase; font-size: 1rem; margin-bottom: 20px;">Connect With Us</h3>
-        
-        <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 30px;">
-            <a href="#" style="color: #c5a47e; text-decoration: none; font-size: 0.9rem;">Instagram</a>
-            <a href="#" style="color: #c5a47e; text-decoration: none; font-size: 0.9rem;">Pinterest</a>
-            <a href="#" style="color: #c5a47e; text-decoration: none; font-size: 0.9rem;">LinkedIn</a>
-        </div>
-        
-        <p style="font-size: 0.75rem; color: #777;">&copy; 2026 Aura & Thread Collective. Quality over trend.</p>
+    </main>
+    <footer>
+        <p>&copy; 2026 Aura and Thread. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navList = document.getElementById('nav-list');
+
+    menuToggle.addEventListener('click', () => {
+        navList.classList.toggle('hidden');
+    });
+
+    function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.querySelector('.lightbox-img');
+        lightboxImg.src = imageSrc;
+        lightbox.classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.add('hidden');
+    }
+</script>
