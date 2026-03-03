@@ -1,4 +1,4 @@
-/* --- YOUR ORIGINAL CSS --- */
+
 header { background-color: #333; color: #fff; padding: 10px 0; text-align: center; }
 .nav { display: flex; justify-content: center; list-style: none; padding: 0; }
 .nav li { margin: 0 15px; }
@@ -14,20 +14,15 @@ header { background-color: #333; color: #fff; padding: 10px 0; text-align: cente
 .product { border: 1px solid #ccc; border-radius: 8px; padding: 15px; text-align: center; transition: transform 0.3s; }
 .product:hover { transform: scale(1.05); }
 
-/* --- WHITEBOARD EXTERNAL REQUIREMENTS --- */
-
-/* Paragraph 3: External (Purple Underline) */
 .external-p {
     color: purple;
     text-decoration: underline;
 }
 
-/* Highlight 3: External (Color) */
 .highlight-external {
     color: darkgoldenrod;
 }
 
-/* Building 3: External (Color) */
 .building-external {
     color: maroon;
 }
