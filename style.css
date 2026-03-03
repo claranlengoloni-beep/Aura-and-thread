@@ -69,3 +69,12 @@ html {
         transition-duration: 0.01ms !important;
     }
 }
+/* Highlight 3: External */
+.highlight-external {
+    color: darkgoldenrod;
+}
+
+/* Paragraph 3: External */
+.external-p {
+    color: purple;
+    text-decoration: underline;
