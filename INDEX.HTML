@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura and Thread</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* Internal CSS (Orange Bold Paragraphs & Green Highlights) */
+        .internal-p {
+            color: orange;
+            font-weight: bold;
+        }
+        .highlight-internal {
+            color: forestgreen;
+        }
+        .building-internal {
+            color: navy;
+        }
+        
+        /* Layout Styles */
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
+        .hidden { display: none; }
+        #lightbox { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; 
+        }
+        #lightbox.active { display: flex; }
+        .product-item { border: 1px solid #ddd; padding: 10px; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h3 style="color: teal;">Building 1: Aura and Thread</h3>
+        <nav id="mobile-nav">
+            <button id="menu-toggle">Menu</button>
+            <ul id="nav-list" class="hidden">
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="color: crimson;">Highlight 1: Our Collection</h1>
+        
+        <section id="product-showcase">
+            <p style="color: blue; font-style: italic;">Paragraph 1: Style using inline CSS (Blue, Italics)</p>
+            
+            <div class="product-item" onclick="openLightbox('image1.jpg')">
+                <h3>Product 1</h3>
+                <p>High-quality thrifted finds.</p>
+            </div>
+        </section>
+
+        <h1 class="highlight-internal">Highlight 2: Sustainable Fashion</h1>
+        
+        <section id="about">
+            <p class="internal-p">Paragraph 2: Style using Internal CSS (Orange, Bold)</p>
+            
+            <h3 class="building-internal">Building 2: Our Mission</h3>
+            <p>We believe in circular fashion for Nairobi and beyond.</p>
+        </section>
+
+        <hr>
+
+        <h1 class="highlight-external">Highlight 3: Join the Community</h1>
+
+        <section id="blog">
+            <p class="external-p">Paragraph 3: Style using External CSS (Purple, Underline)</p>
+            
+            <h3 class="building-external">Building 3: Latest News</h3>
+            <p>Check out our latest blog posts.</p>
+        </section>
+    </main>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img class="lightbox-img" src="" alt="Large View">
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
