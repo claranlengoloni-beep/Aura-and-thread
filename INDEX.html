@@ -3,82 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura and Thread</title>
+    <title>LushLips | Premium Lip Care</title>
     <link rel="stylesheet" href="styles.css">
-    
     <style>
-        /* Internal CSS (Orange Bold Paragraphs & Green Highlights) */
-        .internal-p {
-            color: orange;
-            font-weight: bold;
-        }
-        .highlight-internal {
-            color: forestgreen;
-        }
-        .building-internal {
-            color: navy;
-        }
+        /* Internal CSS for specific branding */
+        .internal-p { color: #d63384; font-weight: bold; } /* Deep Pink */
+        .highlight-internal { color: #850e35; } /* Berry Red */
+        .building-internal { color: #5c1d1d; }
         
-        /* Layout Styles */
-        body { font-family: sans-serif; line-height: 1.6; margin: 20px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+        header { background: #fff; padding: 1rem; border-bottom: 2px solid #f8bbd0; position: sticky; top: 0; z-index: 100; }
+        
         .hidden { display: none; }
         #lightbox { 
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; 
+            background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 1000;
         }
         #lightbox.active { display: flex; }
-        .product-item { border: 1px solid #ddd; padding: 10px; margin: 10px; cursor: pointer; }
+        #lightbox img { max-width: 80%; max-height: 80%; border: 5px solid white; }
+        
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
+        .product-item { border: 1px solid #fce4ec; border-radius: 8px; padding: 15px; text-align: center; transition: 0.3s; cursor: pointer; }
+        .product-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
     <header>
-        <h3 style="color: teal;">Building 1: Aura and Thread</h3>
+        <h3 style="color: #c2185b;">LushLips Nairobi</h3>
         <nav id="mobile-nav">
-            <button id="menu-toggle">Menu</button>
-            <ul id="nav-list" class="hidden">
-                <li><a href="#about">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button id="menu-toggle" style="background: #c2185b; color: white; border: none; padding: 5px 15px; border-radius: 5px;">Menu</button>
+            <ul id="nav-list" class="hidden" style="list-style: none; padding: 10px 0;">
+                <li><a href="#product-showcase">Shop Gloss</a></li>
+                <li><a href="#about">Our Secret</a></li>
+                <li><a href="#blog">Lip Care Tips</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1 style="color: crimson;">Highlight 1: Our Collection</h1>
+    <main style="padding: 20px;">
+        <h1 style="color: #ad1457;">Highlight 1: The Summer Collection</h1>
         
-        <section id="product-showcase">
-            <p style="color: blue; font-style: italic;">Paragraph 1: Style using inline CSS (Blue, Italics)</p>
-            
-            <div class="product-item" onclick="openLightbox('image1.jpg')">
-                <h3>Product 1</h3>
-                <p>High-quality thrifted finds.</p>
+        <p style="color: #ec407a; font-style: italic;">Infused with organic shea butter and Nairobi-sourced honey.</p>
+
+        <section id="product-showcase" class="product-grid">
+            <div class="product-item" onclick="openLightbox('https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?q=80&w=500')">
+                <h3>Glossy Rose</h3>
+                <p>High-shine, zero stickiness.</p>
+            </div>
+            <div class="product-item" onclick="openLightbox('https://images.unsplash.com/photo-1625093742435-6fa192b6fb10?q=80&w=500')">
+                <h3>Berry Blast</h3>
+                <p>Deep tint for bold nights.</p>
             </div>
         </section>
 
-        <h1 class="highlight-internal">Highlight 2: Sustainable Fashion</h1>
+        <h1 class="highlight-internal">Highlight 2: Hydration First</h1>
         
         <section id="about">
-            <p class="internal-p">Paragraph 2: Style using Internal CSS (Orange, Bold)</p>
-            
+            <p class="internal-p">100% Vegan & Cruelty-Free formulas.</p>
             <h3 class="building-internal">Building 2: Our Mission</h3>
-            <p>We believe in circular fashion for Nairobi and beyond.</p>
+            <p>We provide long-lasting hydration that heals while it shines, perfect for the Kenyan climate.</p>
         </section>
 
         <hr>
 
-        <h1 class="highlight-external">Highlight 3: Join the Community</h1>
+        <h1 class="highlight-external">Highlight 3: Join the Gloss Club</h1>
 
         <section id="blog">
-            <p class="external-p">Paragraph 3: Style using External CSS (Purple, Underline)</p>
-            
+            <p class="external-p">Stay updated on our latest drops and pop-up shops.</p>
             <h3 class="building-external">Building 3: Latest News</h3>
-            <p>Check out our latest blog posts.</p>
+            <p>Our "Hydra-Gloss" series is officially launching next month!</p>
         </section>
     </main>
 
     <div id="lightbox" onclick="closeLightbox()">
-        <img class="lightbox-img" src="" alt="Large View">
+        <img id="lightbox-img" src="" alt="Large Product View">
     </div>
 
     <script src="scripts.js"></script>
